@@ -30,7 +30,7 @@ namespace PoshUIkit {
                 
                 
                 foreach (var item in ListItems) {
-                    writer.Write(item.Html());
+                    writer.WriteLine(item.Html());
                 }
                 
                 writer.RenderEndTag(); // End #1
