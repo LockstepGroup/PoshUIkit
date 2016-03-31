@@ -10,7 +10,7 @@ namespace PoshUIkit {
         public string Link;
         public bool IsDropdown;
         public string DropdownMode;
-        public Dropdown DropdownContents;
+        //public Dropdown DropdownContents;
         
         // Join classes together so we can apply them at the same time
         private string allClasses {
