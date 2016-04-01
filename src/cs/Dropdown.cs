@@ -8,6 +8,7 @@ namespace PoshUIkit {
         public List<string> UKClasses { get; set; }
         public Button Button;
         public UnorderedList List;
+        public string Mode;
 
         // Join classes together so we can apply them at the same time
         public string allClasses {
@@ -31,7 +32,16 @@ namespace PoshUIkit {
                                 
                 // Outer Div
                 writer.AddAttribute(HtmlTextWriterAttribute.Class, "uk-button-dropdown");
-                writer.AddAttribute("data-uk-dropdown", null);
+                
+                switch (this.Mode) {
+                    case "hover":
+                        writer.AddAttribute("data-uk-dropdown", null);
+                        break;
+                    case "click":
+                        writer.AddAttribute("data-uk-dropdown", "{mode:'click'}", false);
+                        break;
+                }
+                
                 writer.RenderBeginTag(HtmlTextWriterTag.Div); // Begin #1
                 
                 //Button
@@ -51,6 +61,7 @@ namespace PoshUIkit {
         
         // Constructor
         public Dropdown () {
+            this.Mode = "hover";
 		}
     }
 }
