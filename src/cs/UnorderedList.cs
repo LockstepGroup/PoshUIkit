@@ -10,10 +10,12 @@ namespace PoshUIkit {
         // Join classes together so we can apply them at the same time
         public string allClasses {
             get {
-                if (this.UKClasses.Count == 0) {
+                if (UKClasses == null || UKClasses.Count == 0) {
                     return "uk-list";
                 } else {
-                    return string.Join(" ", UKClasses);
+                    string requiredClasses = "uk-list ";
+                    requiredClasses += string.Join(" ", UKClasses); 
+                    return requiredClasses;
                 }
             }
         }
