@@ -2,7 +2,7 @@ function New-UKButton {
     [CmdletBinding()]
     Param (
         [Parameter(Mandatory=$False,Position=0)]
-        [string]$Name,
+        [string]$Label,
         
         [Parameter(Mandatory=$False,Position=1)]
         [string]$Link,
@@ -17,10 +17,12 @@ function New-UKButton {
         [switch]$AsObject
     )
 
-    $ReturnObject = New-Object PoshUIKit.Button
-    $ReturnObject.Name = $Name
-    $ReturnObject.Link = $Link
+    $ReturnObject           = New-Object PoshUIKit.Button
+    $ReturnObject.Label     = $Label
+    $ReturnObject.Link      = $Link
     $ReturnObject.UKClasses = $Classes
+    
+    $global:test = $ReturnObject
     
     if ($AsObject) { return $ReturnObject }
     if ($AsHtml) { return $ReturnObject.Html() }

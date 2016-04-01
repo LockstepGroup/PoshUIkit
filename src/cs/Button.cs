@@ -12,7 +12,7 @@ namespace PoshUIkit {
         // Join classes together so we can apply them at the same time
         public string allClasses {
             get {
-                if (this.UKClasses.Count == 0) {
+                if (UKClasses == null || UKClasses.Count == 0) {
                     return "uk-button";
                 } else {
                     string requiredClasses = "uk-button ";
