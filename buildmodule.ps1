@@ -205,6 +205,6 @@ $Output | Out-File $OutputFile -Force
 if ($PushToStrap) {
     $FilesToZip = ls "$PSScriptRoot\$ModuleName*" -Exclude *.zip
     $CreateZip = ZipFiles -ZipFilePath "$PSScriptRoot\$ModuleName.zip" -SourceFiles $FilesToZip -Force
-    $StageFolder = "\\vmware-host\Shared Folders\Dropbox\strap\stages\$ModuleName\"
+    $StageFolder = "\\vmware-host\Shared Folders\Dropbox (Personal)\strap\stages\$ModuleName\"
     $Copy = Copy-Item "$PSScriptRoot\$ModuleName.zip" $StageFolder -Force
 }
