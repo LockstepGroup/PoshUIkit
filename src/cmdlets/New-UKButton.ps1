@@ -20,7 +20,7 @@ function New-UKButton {
     $ReturnObject           = New-Object PoshUIKit.Button
     $ReturnObject.Label     = $Label
     $ReturnObject.Link      = $Link
-    $ReturnObject.UKClasses = $Classes
+    if ($UKClasses) { $ReturnObject.UKClasses = $Classes } 
     
     if ($AsObject) { return $ReturnObject }
     if ($AsHtml) { return $ReturnObject.Html() }

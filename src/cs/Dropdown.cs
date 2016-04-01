@@ -11,9 +11,9 @@ namespace PoshUIkit {
         public string Mode;
 
         // Join classes together so we can apply them at the same time
-        private string allClasses {
+        public string allClasses {
             get {
-                if (this.UKClasses.Count == 0) {
+                if (UKClasses == null || UKClasses.Count == 0) {
                     return null;
                 } else {
                     return string.Join(" ", UKClasses);
@@ -32,6 +32,7 @@ namespace PoshUIkit {
                                 
                 // Outer Div
                 writer.AddAttribute(HtmlTextWriterAttribute.Class, "uk-button-dropdown");
+                
                 
                 switch (this.Mode) {
                     case "hover":

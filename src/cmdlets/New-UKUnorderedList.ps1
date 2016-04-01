@@ -16,7 +16,7 @@ function New-UKUnorderedList {
 
     $ReturnObject           = New-Object PoshUIKit.UnorderedList
     $ReturnObject.ListItems = $ListItems
-    $ReturnObject.UKClasses = $Classes 
+    if ($UKClasses) { $ReturnObject.UKClasses = $Classes } 
     
     if ($AsObject) { return $ReturnObject }
     if ($AsHtml) { return $ReturnObject.Html() }
