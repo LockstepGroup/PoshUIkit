@@ -22,8 +22,6 @@ function New-UKButton {
     $ReturnObject.Link      = $Link
     $ReturnObject.UKClasses = $Classes
     
-    $global:test = $ReturnObject
-    
     if ($AsObject) { return $ReturnObject }
     if ($AsHtml) { return $ReturnObject.Html() }
 }
