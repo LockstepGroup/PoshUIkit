@@ -8,7 +8,7 @@ namespace PoshUIkit {
         public List<string> UKClasses { get; set; }
 
         // Join classes together so we can apply them at the same time
-        public string allClasses {
+        private string allClasses {
             get {
                 if (UKClasses == null || UKClasses.Count == 0) {
                     return "uk-list";

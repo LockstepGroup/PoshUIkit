@@ -11,7 +11,7 @@ namespace PoshUIkit {
         public string Mode;
 
         // Join classes together so we can apply them at the same time
-        public string allClasses {
+        private string allClasses {
             get {
                 if (this.UKClasses.Count == 0) {
                     return null;

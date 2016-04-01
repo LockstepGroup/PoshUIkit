@@ -6,15 +6,15 @@ function New-UKIcon {
         
         [Parameter(Mandatory=$False,Position=2)]
         [ValidateSet("small","medium","large")]
-        [array]$Size,
+        [string]$Size,
         
         [Parameter(Mandatory=$False)]
         [switch]$Span,
         
-        [Parameter(Mandatory=$False,ParameterSetName="html")]
+        [Parameter(Mandatory=$False)]
         [switch]$AsHtml = $true,
         
-        [Parameter(Mandatory=$False,ParameterSetName="object")]
+        [Parameter(Mandatory=$False)]
         [switch]$AsObject
     )
 

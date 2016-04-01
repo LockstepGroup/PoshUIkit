@@ -1,13 +1,10 @@
-function New-UKButton {
+function New-UKUnorderedList {
     [CmdletBinding()]
     Param (
-        [Parameter(Mandatory=$False,Position=0)]
-        [string]$Label,
+        [Parameter(Mandatory=$True,Position=0)]
+        [array]$ListItems,
         
         [Parameter(Mandatory=$False,Position=1)]
-        [string]$Link,
-        
-        [Parameter(Mandatory=$False,Position=2)]
         [array]$Classes,
         
         [Parameter(Mandatory=$False)]
@@ -17,10 +14,9 @@ function New-UKButton {
         [switch]$AsObject
     )
 
-    $ReturnObject           = New-Object PoshUIKit.Button
-    $ReturnObject.Label     = $Label
-    $ReturnObject.Link      = $Link
-    $ReturnObject.UKClasses = $Classes
+    $ReturnObject           = New-Object PoshUIKit.UnorderedList
+    $ReturnObject.ListItems = $ListItems
+    $ReturnObject.UKClasses = $Classes 
     
     if ($AsObject) { return $ReturnObject }
     if ($AsHtml) { return $ReturnObject.Html() }

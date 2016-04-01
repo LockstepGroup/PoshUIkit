@@ -7,20 +7,16 @@ function New-UKListItem {
         [Parameter(Mandatory=$False,Position=2)]
         [array]$Link,
         
-        [Parameter(Mandatory=$False,ParameterSetName="headerobject")]
-        [Parameter(ParameterSetName="headerhtml")]
+        [Parameter(Mandatory=$False)]
         [switch]$Header,
         
-        [Parameter(Mandatory=$False,ParameterSetName="dividerobject")]
-        [Parameter(ParameterSetName="dividerhtml")]
+        [Parameter(Mandatory=$False)]
         [switch]$Divider,
         
-        [Parameter(Mandatory=$False,ParameterSetName="headerhtml")]
-        [Parameter(ParameterSetName="dividerhtml")]
+        [Parameter(Mandatory=$False)]
         [switch]$AsHtml = $true,
         
-        [Parameter(Mandatory=$False,ParameterSetName="headerobject")]
-        [Parameter(ParameterSetName="dividerobject")]
+        [Parameter(Mandatory=$False)]
         [switch]$AsObject
     )
 

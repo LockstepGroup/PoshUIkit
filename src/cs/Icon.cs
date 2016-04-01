@@ -10,7 +10,7 @@ namespace PoshUIkit {
         public string Size;
         
         // Join classes together so we can apply them at the same time
-        public string allClasses {
+        private string allClasses {
             get {
                 if (String.IsNullOrEmpty(Size)) {
                     return this.Name;
