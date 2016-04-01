@@ -8,7 +8,6 @@ namespace PoshUIkit {
         public List<string> UKClasses { get; set; }
         public Button Button;
         public UnorderedList List;
-        public bool IsButtonGroup;
 
         // Join classes together so we can apply them at the same time
         public string allClasses {
@@ -29,12 +28,7 @@ namespace PoshUIkit {
             
             StringWriter stringWriter = new StringWriter();
             using (HtmlTextWriter writer = new HtmlTextWriter(stringWriter)) {
-                
-                if (IsButtonGroup) {
-                    writer.AddAttribute(HtmlTextWriterAttribute.Class, "uk-button-group");
-                    writer.RenderBeginTag(HtmlTextWriterTag.Div); // Begin Opt-1
-                }
-                
+                                
                 // Outer Div
                 writer.AddAttribute(HtmlTextWriterAttribute.Class, "uk-button-dropdown");
                 writer.AddAttribute("data-uk-dropdown", null);
@@ -51,9 +45,6 @@ namespace PoshUIkit {
                 
                 writer.RenderEndTag(); // End #2
                 writer.RenderEndTag(); // End #1
-                if (IsButtonGroup) {
-                    writer.RenderEndTag(); // End Opt-1
-                }
             }
             return stringWriter.ToString();
         }
