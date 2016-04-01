@@ -6,6 +6,7 @@ using System.Collections.Generic;
 namespace PoshUIkit {
     public class Dropdown {
         public List<string> UKClasses { get; set; }
+        public Button Button;
 
         // Join classes together so we can apply them at the same time
         public string allClasses {
@@ -26,6 +27,8 @@ namespace PoshUIkit {
                 writer.AddAttribute(HtmlTextWriterAttribute.Class, "uk-button-dropdown");
                 writer.AddAttribute("data-uk-dropdown", null);
                 writer.RenderBeginTag(HtmlTextWriterTag.Div); // Begin #1
+                
+                writer.WriteLine(Button.Html());
                 
                 writer.RenderEndTag(); // End #1
             }
