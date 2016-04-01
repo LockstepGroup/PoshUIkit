@@ -10,10 +10,10 @@ function New-UKButton {
         [Parameter(Mandatory=$False,Position=2)]
         [array]$Classes,
         
-        [Parameter(Mandatory=$False)]
+        [Parameter(Mandatory=$False,ParameterSetName="html")]
         [switch]$AsHtml = $true,
         
-        [Parameter(Mandatory=$False)]
+        [Parameter(Mandatory=$False,ParameterSetName="object")]
         [switch]$AsObject
     )
 

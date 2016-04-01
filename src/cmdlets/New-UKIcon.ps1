@@ -11,10 +11,10 @@ function New-UKIcon {
         [Parameter(Mandatory=$False)]
         [switch]$Span,
         
-        [Parameter(Mandatory=$False)]
+        [Parameter(Mandatory=$False,ParameterSetName="html")]
         [switch]$AsHtml = $true,
         
-        [Parameter(Mandatory=$False)]
+        [Parameter(Mandatory=$False,ParameterSetName="object")]
         [switch]$AsObject
     )
 
