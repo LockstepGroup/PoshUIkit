@@ -9,11 +9,9 @@ function New-UKBreadcrumbs {
         [String]$ExcludePath
     )
     
-    $HtmlOutput = @"
-<div class="uk-grid" data-uk-grid-margin>
-    <div class="uk-width-1-1">
-        <ul class="uk-breadcrumb">
-"@
+    $HtmlOutput  = '<div class="uk-grid" data-uk-grid-margin>'
+    $HtmlOutput += '<div class="uk-width-1-1">'
+    $HtmlOutput += '<ul class="uk-breadcrumb">'
     
     if ($ExcludePath[-1] -ne '\') { $ExcludePath += '\' }
     $FullPathSplit = $CurrentPath -replace [Regex]::Escape($ExcludePath),""
@@ -37,9 +35,7 @@ function New-UKBreadcrumbs {
             $HtmlOutput += '<li><a href="' + $Dots + '">' + $Split + '</a></li>' + "`r`n"
         }
     }
-    $HtmlOutput += @"
-        </ul>
-    </div>
-</div>
-"@
+    $HtmlOutput += "</ul></div></div>"
+
+    return $HtmlOutput
 }

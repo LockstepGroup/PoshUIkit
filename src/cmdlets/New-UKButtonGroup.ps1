@@ -18,6 +18,7 @@ function New-UKButtonGroup {
 
     if ($Buttons)  { $ReturnObject.Buttons  = $Buttons }
     if ($Dropdown) { $ReturnObject.Dropdown = $Dropdown }
+    if ($Classes) { $ReturnObject.UKClasses = $Classes }
 
     if ($AsObject) { return $ReturnObject }
     if ($AsHtml) { return $ReturnObject.Html() }
