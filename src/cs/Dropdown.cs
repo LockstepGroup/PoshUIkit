@@ -14,9 +14,11 @@ namespace PoshUIkit {
         public string allClasses {
             get {
                 if (UKClasses == null || UKClasses.Count == 0) {
-                    return null;
+                    return "uk-button-dropdown";
                 } else {
-                    return string.Join(" ", UKClasses);
+                    string requiredClasses = "uk-button-dropdown ";
+                    requiredClasses += string.Join(" ", UKClasses); 
+                    return requiredClasses;
                 }
             }
         }
@@ -31,7 +33,7 @@ namespace PoshUIkit {
             using (HtmlTextWriter writer = new HtmlTextWriter(stringWriter)) {
                                 
                 // Outer Div
-                writer.AddAttribute(HtmlTextWriterAttribute.Class, "uk-button-dropdown");
+                writer.AddAttribute(HtmlTextWriterAttribute.Class, allClasses);
                 
                 
                 switch (this.Mode) {
