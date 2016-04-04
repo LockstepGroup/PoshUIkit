@@ -24,7 +24,7 @@ function New-UKDropdown {
     $ReturnObject           = New-Object PoshUIKit.Dropdown
     $ReturnObject.Button    = $Button
     $ReturnObject.List      = $List
-    if ($UKClasses) { $ReturnObject.UKClasses = $Classes } 
+    if ($Classes) { $ReturnObject.UKClasses = $Classes } 
     $ReturnObject.Mode      = $Mode
     
     if ($AsObject) { return $ReturnObject }
