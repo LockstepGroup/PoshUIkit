@@ -8,15 +8,21 @@ namespace PoshUIkit {
         public string Type;
         public string Name;
         public string Size;
+        public List<string> UKClasses;
         
         // Join classes together so we can apply them at the same time
         private string allClasses {
             get {
-                if (String.IsNullOrEmpty(Size)) {
-                    return this.Name;
-                } else {
-                    return (this.Name + " " + this.Size);
+                string requiredClasses = this.Name;
+                
+                if (!(UKClasses == null || UKClasses.Count == 0)) {
+                    requiredClasses += " " + string.Join(" ", UKClasses);
                 }
+                
+                if (!(String.IsNullOrEmpty(Size))) {
+                    requiredClasses += " " + this.Size;
+                } 
+                return requiredClasses;
             }
         }
         

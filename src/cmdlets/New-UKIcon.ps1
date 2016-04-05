@@ -12,16 +12,22 @@ function New-UKIcon {
         [switch]$Span,
         
         [Parameter(Mandatory=$False)]
+        [array]$Classes,
+        
+        [Parameter(Mandatory=$False)]
         [switch]$AsHtml = $true,
         
         [Parameter(Mandatory=$False)]
         [switch]$AsObject
     )
 
-    $ReturnObject                   = New-Object PoshUIKit.Icon
-    $ReturnObject.Name              = "uk-icon-" + $Name.ToLower()
+    $ReturnObject      = New-Object PoshUIKit.Icon
+    $ReturnObject.Name = "uk-icon-" + $Name.ToLower()
+    
     if ($Size) { $ReturnObject.Size = "uk-icon-" + $Size.ToLower() }
     if ($Span) { $ReturnObject.Type = "span" }
+    
+    if ($Classes) { $ReturnObject.UKClasses = $Classes }
     
     if ($AsObject) { return $ReturnObject }
     if ($AsHtml) { return $ReturnObject.Html() }

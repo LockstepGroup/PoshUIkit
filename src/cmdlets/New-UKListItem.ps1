@@ -26,7 +26,6 @@ function New-UKListItem {
     
     if ($Header)  { $ReturnObject.IsHeader  = $true }
     if ($Divider) { $ReturnObject.IsDivider = $true }
-
     
     if ($AsObject) { return $ReturnObject }
     if ($AsHtml) { return $ReturnObject.Html() }
